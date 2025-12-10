@@ -1,0 +1,19 @@
+name: 'aml_paysim_project'
+version: '1.0.0'
+config-version: 2
+
+profile: 'aml_paysim_profile'
+
+model-paths: ['models']
+analysis-paths: ['analysis']
+test-paths: ['tests']
+seed-paths: ['seeds']
+macro-paths: ['macros']
+snapshot-paths: ['snapshots']
+
+models:
+  aml_paysim_project:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: view

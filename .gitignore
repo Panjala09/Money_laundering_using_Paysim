@@ -1,0 +1,8 @@
+.env
+*.db
+*.pbix
+*.parquet
+Money_Laundering_Detection_using_Paysim/data/raw/
+Money_Laundering_Detection_using_Paysim/data/spark/
+Money_Laundering_Detection_using_Paysim/db/
+Money_Laundering_Detection_using_Paysim/Money_Laundering_Detection.pbix

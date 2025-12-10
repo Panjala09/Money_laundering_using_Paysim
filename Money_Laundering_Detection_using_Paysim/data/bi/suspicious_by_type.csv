@@ -1,0 +1,3 @@
+transaction_type,suspicious_txn_count,suspicious_total_amount,avg_fraud_score
+CASH_OUT,97091,19127508326.289913,0.8961729202501376
+TRANSFER,6037,6137851748.379991,0.9602832532714914
