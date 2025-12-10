@@ -2,7 +2,7 @@ Money Laundering Detection using PaySim
 
 End-to-End Data Engineering & ML Pipeline | Spark • DBT • ML • Power BI
 
-This project implements a full data engineering and machine learning pipeline to detect potential money laundering using the PaySim synthetic financial transactions dataset. It covers ingestion, cleaning, feature engineering, ML scoring, Spark transformations, DBT modeling, and a Power BI dashboard.
+This project implements a complete data engineering and machine learning pipeline to detect potential money laundering using the PaySim financial transactions dataset.
 
 📂 Project Structure
 Money_Laundering_Detection_using_Paysim/
@@ -54,74 +54,58 @@ Money_Laundering_Detection_using_Paysim/
 │           └── mart_suspicious_by_type.sql
 │
 └── Money_Laundering_Detection.pbix
-
 🏗️ Pipeline Overview
-1️⃣ Ingestion
+1. Ingestion
 
 Loads raw PaySim CSV into the project.
 
-2️⃣ Cleaning (Spark)
+2. Cleaning (Spark)
 
 Transforms raw data into clean parquet files.
 
-3️⃣ Feature Engineering
+3. Feature Engineering
 
-Builds AML-focused behavior features.
+Builds AML-focused behavioral features.
 
-4️⃣ Machine Learning
+4. Machine Learning
 
-Trains a Random Forest model to classify suspicious transactions.
+Random Forest model predicts suspicious transactions.
 
-5️⃣ Scoring
+5. Scoring
 
 Applies the model to generate risk scores.
 
-6️⃣ DBT Modeling
+6. DBT Modeling
 
-Creates staging and mart tables for analytics.
+Creates staging and mart models for analytics.
 
-7️⃣ Power BI Dashboard
+7. Power BI Dashboard
 
-Visualizes suspicious patterns, high-risk customers, and trends.
+Visualizes suspicious patterns, risk distribution, and customer behavior.
 
 🧱 Technologies Used
 
 Python
-
 PySpark
-
 Scikit-learn
-
 SQLite
-
 DBT
-
 Power BI
-
 Parquet / CSV
 
 📊 Power BI Dashboard
 
-The Power BI report provides:
-
+The dashboard includes:
 Suspicious transactions
-
-Risk patterns by day & transaction type
-
 High-risk customers
-
+Daily and type-based anomaly trends
 Aggregated AML insights
 
 🎯 Highlights
 
 End-to-end data engineering pipeline
-
 Spark-based scalable transformations
-
-ML model for AML detection
-
+Machine learning model for AML detection
 DBT semantic layer
-
 BI-ready analytical datasets
-
-Full project lifecycle from raw data → ML → dashboard
+Complete lifecycle from raw data → ML → dashboard
