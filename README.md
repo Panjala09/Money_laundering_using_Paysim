@@ -2,110 +2,65 @@ Money Laundering Detection using PaySim
 
 End-to-End Data Engineering & ML Pipeline | Spark • DBT • ML • Power BI
 
-This project implements a complete data engineering and machine learning pipeline to detect potential money laundering using the PaySim financial transactions dataset.
+This project implements a complete data engineering and machine learning pipeline to detect potential money laundering activities using the PaySim synthetic financial transaction dataset. It showcases modern data engineering practices including ingestion, cleaning, feature engineering, ML model training, DBT modeling, Spark transformations, and a Power BI dashboard for business insights.
 
-📂 Project Structure
-Money_Laundering_Detection_using_Paysim/
-│
-├── .env
-│
-├── data/
-│   ├── raw/
-│   │   └── PS_20174392719_1491204439457_log.csv
-│   │
-│   ├── bi/
-│   │   ├── suspicious_transactions.csv
-│   │   ├── suspicious_customers.csv
-│   │   ├── suspicious_by_day.csv
-│   │   └── suspicious_by_type.csv
-│   │
-│   └── spark/
-│       └── clean_transactions/
-│           ├── part-00000-xxxx.snappy.parquet
-│           ├── part-00001-xxxx.snappy.parquet
-│           ├── ...
-│           └── _SUCCESS
-│
-├── db/
-│   └── aml_paysim.db
-│
-├── models/
-│   └── rf_aml_model.pkl
-│
-├── src/
-│   ├── ingest_paysim.py
-│   ├── transform_to_clean.py
-│   ├── build_features.py
-│   ├── train_model.py
-│   ├── score_transactions.py
-│   ├── build_aggregates.py
-│   ├── export_for_bi.py
-│   └── spark_clean_paysim.py
-│
-├── aml_dbt/
-│   ├── dbt_project.yml
-│   └── models/
-│       ├── staging/
-│       │   └── stg_transaction_features.sql
-│       │
-│       └── marts/
-│           ├── mart_suspicious_customers.sql
-│           ├── mart_suspicious_by_day.sql
-│           └── mart_suspicious_by_type.sql
-│
-└── Money_Laundering_Detection.pbix
 🏗️ Pipeline Overview
-1. Ingestion
+1. Data Ingestion
+Loads raw PaySim dataset into the pipeline
+Environment variables managed using .env
 
-Loads raw PaySim CSV into the project.
-
-2. Cleaning (Spark)
-
-Transforms raw data into clean parquet files.
+2. Data Cleaning (Spark)
+Converts raw transaction logs into optimized parquet format
+Handles schema standardization and data quality checks
 
 3. Feature Engineering
+Creates AML-focused behavioral features
+Identifies abnormal patterns such as high-value transfers and rapid repeated transactions
 
-Builds AML-focused behavioral features.
+4. Machine Learning Model
+Trains a Random Forest classifier to detect suspicious transactions
+Saves trained model for downstream scoring
 
-4. Machine Learning
+5. Transaction Scoring
+Scores all transactions to assign risk levels
+Outputs suspicious activity for analytics
 
-Random Forest model predicts suspicious transactions.
-
-5. Scoring
-
-Applies the model to generate risk scores.
-
-6. DBT Modeling
-
-Creates staging and mart models for analytics.
+6. DBT Transformation Layer
+Builds staging and mart models
+Produces analytical datasets for reporting
 
 7. Power BI Dashboard
+Interactive AML dashboard that includes:
+Suspicious transactions
+High-risk customers
+Daily & category-wise risk trends
+Aggregated AML insights
 
-Visualizes suspicious patterns, risk distribution, and customer behavior.
+🧱 Tech Stack
 
-🧱 Technologies Used
-
+Languages & Tools
 Python
 PySpark
 Scikit-learn
-SQLite
 DBT
 Power BI
+SQLite
 Parquet / CSV
 
-📊 Power BI Dashboard
+Concepts Covered
 
-The dashboard includes:
-Suspicious transactions
-High-risk customers
-Daily and type-based anomaly trends
-Aggregated AML insights
+ETL / ELT Pipelines
+Feature Engineering
+ML Model Lifecycle
+Data Warehousing (Marts/Staging)
+Distributed Processing
+BI Reporting
 
-🎯 Highlights
+🎯 Key Highlights
 
-End-to-end data engineering pipeline
-Spark-based scalable transformations
-Machine learning model for AML detection
-DBT semantic layer
-BI-ready analytical datasets
-Complete lifecycle from raw data → ML → dashboard
+Complete end-to-end data engineering project
+Spark-based scalable processing
+ML-driven suspicious activity detection
+DBT modeling for clean analytical layers
+BI dashboard enabling AML insights
+Follows modular, production-style pipeline design
